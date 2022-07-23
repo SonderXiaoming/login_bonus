@@ -15,7 +15,7 @@
 
 ## 本项目地址：
 
-https://github.com/SonderXiaoming/autohelp
+https://github.com/SonderXiaoming/login_bonus
 
 ## 魔改内容
 

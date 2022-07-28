@@ -2,6 +2,7 @@ import os
 import sqlite3
 from collections import Counter
 
+
 class CardRecordDAO:
     def __init__(self, db_path):
         self.db_path = db_path
@@ -46,6 +47,7 @@ class CardRecordDAO:
             return -1
         user_card_num = cards_num[uid]
         return sum(n > user_card_num for n in cards_num.values()) + 1
+
 
 DB_PATH = os.path.expanduser("~/.hoshino/pcr_stamp.db")
 db = CardRecordDAO(DB_PATH)

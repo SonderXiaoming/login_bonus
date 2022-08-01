@@ -31,7 +31,7 @@ https://github.com/SonderXiaoming/login_bonus
 
 效果这样
 
-![收集册](https://user-images.githubusercontent.com/98363578/180589157-69f9585e-cdfc-438b-bbc3-5e29012651aa.PNG)
+![收集册](https://user-images.githubusercontent.com/98363578/182066912-4398367b-c0fb-4ec6-b9cb-3ed12be4b7ef.PNG)
 
 红的是已经收集到的，灰的是没收集的
 

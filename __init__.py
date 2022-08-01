@@ -23,7 +23,7 @@ COL_NUM = 8  # 查看仓库时每行显示的卡片个数
 __BASE = os.path.split(os.path.realpath(__file__))
 FRAME_DIR_PATH = os.path.join(__BASE[0], 'image')
 DIR_PATH = os.path.join(os.path.expanduser(hoshino.config.RES_DIR), 'img', 'priconne', 'stamp')
-font = ImageFont.truetype('arial.ttf', 16)
+font = ImageFont.truetype(os.path.join(os.path.dirname(__file__), 'arial.ttf'), 16)
 card_file_names_all = []
 
 # 资源预检
@@ -36,7 +36,7 @@ for image in image_list:
         img = Image.open(image_path)
         image_cache[image] = img.convert('RGBA') if img.mode != 'RGBA' else img
     card_file_names_all.append(image)
-
+len_card = len(card_file_names_all)
 
 def normalize_digit_format(n):
     return f'0{n}' if n < 10 else f'{n}'
@@ -57,7 +57,7 @@ lmt = DailyNumberLimiter(1)
 
 
 # @sv.on_fullmatch('签到', '盖章', '妈', '妈?', '妈妈', '妈!', '妈！', '妈妈！', only_to_me=True)
-@sv.on_rex(r"^签到$|^盖章$|^(妈|ma)(妈|ma|!|！)?[!！]?$", only_to_me=True)
+@sv.on_rex(r"^盖章$|^(妈|ma)(妈|ma|!|！)?[!！]?$", only_to_me=True)
 async def give_okodokai(bot, ev: CQEvent):
     uid = ev.user_id
     gid = ev.group_id
@@ -85,7 +85,8 @@ async def storage(bot, ev: CQEvent):
         uid = int(ev.message[0].data['qq'])
     else:
         await bot.finish(ev, '参数格式错误, 请重试')
-    row_num = len(card_file_names_all) // COL_NUM
+    
+    row_num = len_card//COL_NUM if len_card % COL_NUM !=0 else len_card//COL_NUM-1
     base = Image.open(FRAME_DIR_PATH + '/frame.png')
     base = base.resize((40 + COL_NUM * 80 + (COL_NUM - 1) * 10, 150 + row_num * 80 + (row_num - 1) * 10),
                        Image.ANTIALIAS)

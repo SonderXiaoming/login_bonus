@@ -18,7 +18,7 @@ sv = Service(
 )
 
 PRELOAD = True  # 是否启动时直接将所有图片加载到内存中以提高查看仓库的速度(增加约几M内存消耗)
-COL_NUM = 8  # 查看仓库时每行显示的卡片个数
+COL_NUM = 11  # 查看仓库时每行显示的卡片个数
 
 __BASE = os.path.split(os.path.realpath(__file__))
 FRAME_DIR_PATH = os.path.join(__BASE[0], 'image')
@@ -57,7 +57,7 @@ lmt = DailyNumberLimiter(1)
 
 
 # @sv.on_fullmatch('签到', '盖章', '妈', '妈?', '妈妈', '妈!', '妈！', '妈妈！', only_to_me=True)
-@sv.on_rex(r"^签到$|^盖章$|^(妈|ma)(妈|ma|!|！)?[!！]?$", only_to_me=True)
+@sv.on_rex(r"^盖章$|^(妈|ma)(妈|ma|!|！)?[!！]?$", only_to_me=True)
 async def give_okodokai(bot, ev: CQEvent):
     uid = ev.user_id
     gid = ev.group_id

@@ -19,7 +19,7 @@ https://github.com/SonderXiaoming/login_bonus
 
 ## 魔改内容
 
-增加印章至41种
+增加印章至110种
 
 除了标准的可可妈印章，还多了其他可爱印章，详见下方
 
@@ -31,11 +31,17 @@ https://github.com/SonderXiaoming/login_bonus
 
 效果这样
 
-![收集册](https://user-images.githubusercontent.com/98363578/182066912-4398367b-c0fb-4ec6-b9cb-3ed12be4b7ef.PNG)
+![收集册](https://user-images.githubusercontent.com/98363578/185780489-d60b1484-c4af-4834-b1f4-6db569a91048.PNG)
 
 红的是已经收集到的，灰的是没收集的
 
 有群排行（卷，都可以卷）
+
+## 素材来源：
+
+https://tieba.baidu.com/p/6769790810
+
+（一直在更新，真的猛，来个同好长期~~监视~~栞栞她的更新并pr）
 
 ## 简单食用教程：
 
